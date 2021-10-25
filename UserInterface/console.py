@@ -1,11 +1,13 @@
 from Domain.Vanzare import get_string, creeaza_carte, get_title, get_genre, get_price, get_sale
 from Logic.general_logic import create, update, delete, read
+from Logic.modify_genre import modify_g
 from Logic.modify_prices import modify_prices
 
 
 def show_menu():
     print('1. CRUD')
     print('2. Reducere pret pentru clientii cu silver si gold')
+    print('3. Modificarea genului pentru un titlu dat')
     print('x. Exit')
 
 
@@ -74,6 +76,12 @@ def handle_crud(vanzari):
     return vanzari
 
 
+def handle_modify_genre(vanzari):
+    to_modify = input("Dati tilul cartii a carui gen se doreste modificarea: ")
+    genre_to_be_replaced_with = input("Introduceti noul gen al cartii")
+    vanzari = modify_g(vanzari, to_modify, genre_to_be_replaced_with)
+    return vanzari
+
 def run_ui(vanzari):
 
     while True:
@@ -83,6 +91,8 @@ def run_ui(vanzari):
             vanzari = handle_crud(vanzari)
         elif optiune == '2':
             vanzari = modify_prices(vanzari)
+        elif optiune == '3':
+            vanzari = handle_modify_genre(vanzari)
         elif optiune == 'x':
             break
         else:
