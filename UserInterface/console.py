@@ -1,5 +1,6 @@
 from Domain.Vanzare import get_string, creeaza_carte, get_title, get_genre, get_price, get_sale
-from Logic.general_logic import create, update, delete, read, modify_prices
+from Logic.general_logic import create, update, delete, read
+from Logic.modify_prices import modify_prices
 
 
 def show_menu():

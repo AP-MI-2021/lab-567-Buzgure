@@ -1,5 +1,5 @@
 from Logic.general_logic import create
-from Tests.general_tests import test_crud
+from Tests.test_crud import test_crud
 from UserInterface.console import run_ui
 
 
