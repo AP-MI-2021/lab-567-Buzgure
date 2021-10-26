@@ -39,7 +39,7 @@ def update(lst_vanzari, new_vanzare):
    """
    Actualizeaza o vanzare existenta
    :param lst_vanzari: lista de vanzari
-   :param new_vanzare: vanzarea care se va actualiza, folosind id-ul
+   :param new_vanzare: vanzarea cu care se va inlocui cea existenta deja pe acel id-ul
    :return: o lista ce contine vanzarea actualizata
    """
    new_list = []
