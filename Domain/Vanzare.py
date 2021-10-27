@@ -8,11 +8,14 @@ def creeaza_carte(id_vanzare: int, titlu_carte: str, gen_carte: str, pret: float
     :param reducere_client: tipul cardului de fidelitate
     :return: o vanzare
     """
-    return{'id': id_vanzare,
+    """
+     return{'id': id_vanzare,
            'titlu': titlu_carte,
            'gen': gen_carte,
            'pret': pret,
            'reducere': reducere_client}
+    """
+    return (id_vanzare, titlu_carte, gen_carte, pret, reducere_client)
 
 
 def get_id(vanzare):
@@ -21,7 +24,7 @@ def get_id(vanzare):
     :param vanzare: vanzarea
     :return: id-ul vanzarii
     """
-    return vanzare['id']
+    return vanzare[0]
 
 
 def get_title(vanzare):
@@ -30,7 +33,7 @@ def get_title(vanzare):
     :param vanzare: vanzarea
     :return: titlul cartii din vanzare
     """
-    return vanzare['titlu']
+    return vanzare[1]
 
 
 def get_genre(vanzare):
@@ -39,7 +42,7 @@ def get_genre(vanzare):
     :param vanzare: vanzarea
     :return: genul cartii din vanzare
     """
-    return vanzare['gen']
+    return vanzare[2]
 
 
 def get_price(vanzare):
@@ -48,7 +51,7 @@ def get_price(vanzare):
     :param vanzare: vanzarea
     :return: pretul cartii din vanzare
     """
-    return vanzare['pret']
+    return vanzare[3]
 
 
 def get_sale(vanzare):
@@ -57,7 +60,7 @@ def get_sale(vanzare):
     :param vanzare: vanzarea
     :return: tipul reducerii clientului
     """
-    return vanzare['reducere']
+    return vanzare[4]
 
 
 def get_string(vanzare):
