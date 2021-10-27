@@ -3,6 +3,11 @@ from Logic.general_logic import read, update
 
 
 def list_prices(vanzari):
+    """
+    Lista ce contine preturile fiecarei carti in ordine crescatoare
+    :param vanzari: lista de vanzari
+    :return: lista ceruta
+    """
     list = []
     for vanzare in vanzari:
         price = get_price(vanzare)
@@ -12,6 +17,11 @@ def list_prices(vanzari):
 
 
 def list_id_ascending(vanzari):
+    """
+    Lista ce contine id-urile fiecarei carti, sortate deja crescator
+    :param vanzari: lista de vanzari
+    :return: lista ceruta
+    """
     list_id = []
     index = 0
     list = list_prices(vanzari)
