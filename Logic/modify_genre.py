@@ -3,7 +3,13 @@ from Logic.general_logic import update
 
 
 def modify_g(vanzari, to_modify, genre):
-
+    """
+    Modifica genul cartii dintr-o vanzare, pe baza numelui acesteia
+    :param vanzari: lista de vanzari
+    :param to_modify: numele cartii care necesita modificari
+    :param genre: noul gen al cartii
+    :return: lista modificata
+    """
     for vanzare in vanzari:
         nume = get_title(vanzare)
         if nume == to_modify:
