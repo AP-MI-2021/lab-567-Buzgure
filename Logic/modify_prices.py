@@ -38,4 +38,6 @@ def modify_prices(lst_vanzari):
          lst_vanzari = update(lst_vanzari, creeaza_carte(id, nume, gen, apply_discount_silver(price), 'None'))
       elif reducere == 'Gold':
          lst_vanzari = update(lst_vanzari, creeaza_carte(id, nume, gen, apply_discount_gold(price), 'None'))
+      else:
+         raise TypeError('Reducerea nu este introdusa corect')
    return lst_vanzari

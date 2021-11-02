@@ -5,11 +5,16 @@ from UserInterface.console import run_ui
 
 
 def main():
-    vanzari = []
+    vanzari = [(1, "Spider-Man", "Sci-Fi", 60, "Gold"),
+               (2, "Marvelous Adventures", "Fiction", 30, "Silver")
+
+
+
+               ]
     vanzari = run_ui(vanzari)
 
 
 if __name__ == '__main__':
-    test_crud()
-    test_modify_prices()
+    #test_crud()
+    #test_modify_prices()
     main()

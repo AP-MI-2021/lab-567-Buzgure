@@ -17,7 +17,7 @@ def get_data():
 
 def test_create():
     vanzari = get_data()
-    params = (23,'bnew','gnew',1600,'Silver')
+    params = (1,'bnew', 'gnew', 1600, 'Silver')
     s_new = creeaza_carte(*params)
     new_vanzari = create(vanzari, *params)
     assert len(new_vanzari) == len(vanzari) + 1

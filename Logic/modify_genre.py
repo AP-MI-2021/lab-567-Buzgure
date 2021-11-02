@@ -17,4 +17,6 @@ def modify_g(vanzari, to_modify, genre):
             price = get_price(vanzare)
             reducere = get_sale(vanzare)
             vanzari = update(vanzari, creeaza_carte(id, nume, genre, price, reducere))
+        else:
+            raise ValueError('Cartea cu numele introdus nu exista in baza de date')
     return vanzari
