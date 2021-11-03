@@ -3,6 +3,7 @@ from Logic.ascending_sort_1 import asc_sort
 from Logic.general_logic import create, update, delete, read
 from Logic.modify_genre import modify_g
 from Logic.modify_prices import modify_prices
+from UserInterface.comand_line_console import command_line_console
 
 
 def show_menu():
@@ -10,6 +11,8 @@ def show_menu():
     print('2. Reducere pret pentru clientii cu silver si gold')
     print('3. Modificarea genului pentru un titlu dat')
     print('5. Ordonarea vanzarilor crescator dupa pret')
+    print('c. Command line console')
+
     print('x. Exit')
 
 
@@ -110,6 +113,8 @@ def handle_modify_genre(vanzari):
 
 def handle_ascending_sort(vanzari):
     handle_show_all(asc_sort(vanzari))
+def handle_command_console(vanzari):
+    return command_line_console(vanzari)
 
 def run_ui(vanzari):
 
@@ -125,6 +130,8 @@ def run_ui(vanzari):
                 vanzari = handle_modify_genre(vanzari)
             elif optiune == '5':
                 handle_ascending_sort(vanzari)
+            elif optiune == 'c':
+                vanzari = handle_command_console(vanzari)
             elif optiune == 'x':
                 break
             else:
