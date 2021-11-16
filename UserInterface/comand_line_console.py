@@ -2,8 +2,15 @@ from Domain.Vanzare import get_string
 from Logic.general_logic import create, delete
 
 
-def command_line_console(vanzari):
-    # add 1, Name, Gen, Price, Type
+def command_line_console(vanzari, undo_list, redo_list):
+    """
+    Exe
+    :param vanzari:
+    :param undo_list:
+    :param redo_list:
+    :return:
+    """
+    # add, 1, Name, Gen, Price, Type
     command_line_str = input('Introduceti comanda: ')
     command_line = []
     command_line_str_split = command_line_str.split(', ')
@@ -13,7 +20,7 @@ def command_line_console(vanzari):
         if command_line[index] == 'add':
             try:
                 vanzari = create(vanzari, int(command_line[index + 1]), command_line[index + 2],
-                             command_line[index + 3], float(command_line[index + 4]), command_line[index + 5])
+                             command_line[index + 3], float(command_line[index + 4]), command_line[index + 5], undo_list, redo_list)
             except ValueError as ve:
                 print('Eroare! Detalii: ', ve)
         elif command_line[index] == 'showall':
@@ -21,7 +28,7 @@ def command_line_console(vanzari):
                 print(get_string(vanzare))
         elif command_line[index] == 'delete':
             try:
-                vanzari = delete(vanzari, int(command_line[index + 1]))
+                vanzari = delete(vanzari, int(command_line[index + 1]),undo_list, redo_list)
             except ValueError:
                 print( 'Id-ul introdus nu exista, se va trece peste!')
     return vanzari

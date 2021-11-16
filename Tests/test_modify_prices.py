@@ -18,7 +18,9 @@ def get_data():
 
 def test_modify_prices():
     vanzari = get_data()
-    new_list = modify_prices(vanzari)
+    undo_list = []
+    redo_list = []
+    new_list = modify_prices(vanzari, [], [])
     assert len(vanzari) == len(new_list)
     for vanzare in new_list:
         assert get_sale(vanzare) == 'None'

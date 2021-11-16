@@ -15,7 +15,7 @@ def creeaza_carte(id_vanzare: int, titlu_carte: str, gen_carte: str, pret: float
            'pret': pret,
            'reducere': reducere_client}
     """
-    return (id_vanzare, titlu_carte, gen_carte, pret, reducere_client)
+    return [id_vanzare, titlu_carte, gen_carte, pret, reducere_client]
 
 
 def get_id(vanzare):
